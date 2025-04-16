@@ -26,13 +26,14 @@ app.use(cors({
 
 
 //routes
-app.use("/api/v5/users", require("../sever/routes/userRoute"));
+app.use("/api/users", require("../sever/routes/userRoute"));
 
 //transaction routes 
-app.use("/api/v5/transaction",require("../sever/routes/transactionRoutes"));
+app.use("/api/transaction",require("../sever/routes/transactionRoutes"));
  
 
 //static files 
+
 app.use(express.static(path.join(__dirname, './client/build')))
 
 app.get ('*', function(req,res){
